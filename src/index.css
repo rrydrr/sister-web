@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,600;1,14..32,600&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .active-nav::after {
+        @apply content-[''] w-5 -bottom-[0.10rem] rounded-md translate-x-1/2 right-1/2 border-accent absolute border-b-2 hidden lg:flex
+    }
+
+    .active-nav {
+        @apply text-light
+    }
+
+    .icon-text {
+        @apply font-poppins text-primary text-xs lg:text-sm mt-3
+    }
+
+    .icon {
+        @apply lg:p-6 p-3 rounded-lg lg:rounded-2xl
+    }
+
+    .image-container {
+        @apply relative w-1/4 h-32 lg:w-1/6 lg:h-[26rem] justify-center
+    }
+
+    .image-wrapper {
+        @apply items-end flex overflow-hidden rounded-full w-full h-full
+    }
+}
+
+@layer base {
+    .text-title {
+        font-size: calc(1.5rem + 3vw);
+        line-height: calc(1.5rem + 3.9vw);
+    }
+
+    .border-offset-tl::before {
+        @apply content-[''] absolute border lg:border-2 border-background rounded-full bottom-1 lg:bottom-2 right-1 lg:right-2 w-full h-full -z-10 block
+    }
+
+    .border-offset-tr::before {
+        @apply content-[''] absolute border lg:border-2 border-background rounded-full bottom-1 lg:bottom-2 left-1 lg:left-2 w-full h-full -z-10 block
+    }
+
+    .border-offset-t::before {
+        @apply content-[''] absolute border lg:border-2 border-background rounded-full bottom-1 lg:bottom-2 w-full h-full -z-10 block
+    }
+}
